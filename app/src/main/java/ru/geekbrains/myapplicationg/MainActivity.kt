@@ -59,8 +59,9 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
     }
-    class Weather(var town: String, var temperature: Int)
+    open class Weather(var town: String, var temperature: Int)
     class Repository {
+
 
         private val weatherList: List<Weather>
 
@@ -70,18 +71,9 @@ class MainActivity : AppCompatActivity() {
     }
     class WeatherViewHolder(itemViev: View) : RecyclerView.ViewHolder(itemViev)
     open class BaseViewModel : ViewModel() {
+
+
     }
-    fun getWeather(): List<Weather> {
-        return weatherList
-    }
-    fun onBindViewHolder(holder: WeatherViewHolder, position: Int) {
-        holder.bind(weatherList[position])
-    }
-    
-
-
-
-
 
 
 
@@ -92,11 +84,33 @@ class MainActivity : AppCompatActivity() {
     fun toastMe(view: View) {
         val myToast = Toast.makeText(applicationContext,"Краснодар  40", Toast.LENGTH_SHORT)
         myToast.show()
+
+
+        for(i in 1..10){
+
+            print("Hello Kotlin!")
+        }
+
+        for(i in 10 downTo 1 step 2) {
+            print("Hello Kotlin!")
+
+        }
+
+        repeat(10){
+
+            print("Hello Kotlin321!")
+        }
+
+
     }
-    data class Note(val title: String, val note: String, val color: Int)
-    val newCopy = weather.copy(town = "Санкт-Петербург")
 
 
+
+
+
+}
+
+private fun <E> List<E>.set(i : Any , weather : Weather) {
 
 
 }
